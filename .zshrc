@@ -114,3 +114,18 @@ export DOCKER_BUILDKIT=1
 
 alias dcet="docker compose exec -T tools"
 export PATH="${HOME}/.pyenv/shims:${PATH}"
+
+# Version Controll Dotfiles Via Git Magic
+## 
+# Install on new system:
+# 1. git clone git@github.com:essenmitsosse/dotfiles.git $HOME/.dotfile.git --bare
+#
+# 2. /usr/bin/git --git-dir=$HOME/.dotfile.git --work-tree=$HOME checkout
+#
+# 3. source ~/.zshrc
+#    Now `dotfile` should be an alias for running git in the $HOME folder
+#
+# 4. dotfile config --local status.showUntrackedFiles no
+#
+# Source: https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/
+alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfile.git/ --work-tree=$HOME'
