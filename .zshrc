@@ -107,3 +107,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+## EXPLOSION STUFF
+# this is necessary for the caching volumes used in the Dockerfile's
+export DOCKER_BUILDKIT=1
+
+alias dcet="docker compose exec -T tools"
+export PATH="${HOME}/.pyenv/shims:${PATH}"
