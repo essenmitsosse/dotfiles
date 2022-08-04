@@ -8,7 +8,12 @@ export ZSH="/Users/marcus/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="dracula"
+
+# New Line for commands
+# You can display a new line for your commands. So you are able to split the 
+# terminal infos and the following command in seperate lines.
+DRACULA_DISPLAY_NEW_LINE=1
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
