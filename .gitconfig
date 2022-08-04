@@ -1,0 +1,14 @@
+[user]
+	email = marcus@essenmitsosse.de
+	name = Marcus Blättermann
+[core]
+	editor = code --wait
+	ignorecase = false
+[gpg]
+[commit]
+[push]
+	followTags = true
+	default = current
+
+[init]
+	defaultBranch = main
