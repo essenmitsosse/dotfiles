@@ -15,6 +15,39 @@ ZSH_THEME="dracula"
 # terminal infos and the following command in seperate lines.
 DRACULA_DISPLAY_NEW_LINE=1
 
+# NVM Completion
+#
+# nvm comes with a default bash_completion profile. If you want to
+# enable it, you can do it by exporting the NVM_COMPLETION environment
+#variable and setting it to true. It must be set before zsh-nvm is loaded.
+NVM_COMPLETION=true
+
+# NVM Lazy Loading
+#
+# If you find nvm adds too much lag to your shell startup you can enable
+# lazy loading by exporting the NVM_LAZY_LOAD environment variable and
+# setting it to true. It must be set before zsh-nvm is loaded.
+#
+# Lazy loading is around 70x faster (874ms down to 12ms for me), however
+# the first time you run nvm, npm, node or a global module you'll get a
+# slight delay while nvm loads first. You'll only get this delay once
+# per session.
+NVM_LAZY_LOAD=true
+
+# NVM Auto use
+#
+# If you have lots of projects with an .nvmrc file you may find the auto
+# use option helpful. If it's enabled, when you cd into a directory with
+# an .nvmrc file, zsh-nvm will automatically load or install the required
+# node version in .nvmrc. You can enable it by exporting the NVM_AUTO_USE
+# environment variable and setting it to true. It must be set before
+# zsh-nvm is loaded.
+#
+# If you enable this option and don't have nvm loaded in the current
+# session (NVM_LAZY_LOAD or NVM_NO_USE) it won't work until you've loaded-
+# nvm.
+NVM_AUTO_USE=true
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -78,6 +111,7 @@ DRACULA_DISPLAY_NEW_LINE=1
 plugins=(
     git
     zsh-nvm
+    npm
 )
 
 source $ZSH/oh-my-zsh.sh
