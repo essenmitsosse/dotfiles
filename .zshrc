@@ -82,3 +82,7 @@ export PATH="${HOME}/.pyenv/shims:${PATH}"
 #
 # Source: https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/
 alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfile.git/ --work-tree=$HOME'
+
+# Copies the current Git SHA to the clip board
+# https://stackoverflow.com/a/25899810/4534704
+alias gitCopyCurrentSha='git log -1 --format="%H" | pbcopy'
