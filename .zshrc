@@ -86,3 +86,4 @@ alias dotfile='GIT_DIR=$HOME/.dotfile.git/ GIT_WORK_TREE=$HOME'
 # Copies the current Git SHA to the clip board
 # https://stackoverflow.com/a/25899810/4534704
 alias gitCopyCurrentSha='git log -1 --format="%H" | pbcopy'
+alias gitBranchClean='(git rev-parse --abbrev-ref HEAD | pbcopy) && gsw main && gfa && ggl && git branch -d "$(pbpaste)"'
