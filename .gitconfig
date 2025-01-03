@@ -1,11 +1,14 @@
 [user]
 	email = marcus@essenmitsosse.de
 	name = Marcus Blättermann
+	signinkey = A1E1F04008AC450D
+	signingkey = A1E1F04008AC450D
 [core]
 	editor = code --wait
 	ignorecase = false
 [gpg]
 [commit]
+	gpgSign = true
 [push]
 	followTags = true
 	default = current
@@ -13,3 +16,14 @@
 
 [init]
 	defaultBranch = main
+[include]
+  path = /Users/marcus/Library/Preferences/netlify/helper/git-config
+[rebase]
+	rebaseMerges = true
+[rerere]
+	enabled = true
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
