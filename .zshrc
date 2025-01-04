@@ -11,7 +11,7 @@ export ZSH="/Users/marcus/.oh-my-zsh"
 ZSH_THEME="dracula"
 
 # New Line for commands
-# You can display a new line for your commands. So you are able to split the 
+# You can display a new line for your commands. So you are able to split the
 # terminal infos and the following command in seperate lines.
 DRACULA_DISPLAY_NEW_LINE=1
 
@@ -62,7 +62,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Version Controll Dotfiles Via Git Magic
-## 
+##
 # Install on new system:
 # 1. git clone git@github.com:essenmitsosse/dotfiles.git $HOME/.dotfile.git --bare
 #
