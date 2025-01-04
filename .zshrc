@@ -61,13 +61,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-## EXPLOSION STUFF
-# this is necessary for the caching volumes used in the Dockerfile's
-export DOCKER_BUILDKIT=1
-
-alias dcet="docker compose exec -T tools"
-export PATH="${HOME}/.pyenv/shims:${PATH}"
-
 # Version Controll Dotfiles Via Git Magic
 ## 
 # Install on new system:
