@@ -74,7 +74,7 @@ source $ZSH/oh-my-zsh.sh
 # 4. dotfile config --local status.showUntrackedFiles no
 #
 # Source: https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/
-alias dotfile='GIT_DIR=$HOME/.dotfile.git/ GIT_WORK_TREE=$HOME'
+alias dotfile='/usr/bin/git --git-dir=$HOME/.dotfile.git/ --work-tree=$HOME'
 
 # Copies the current Git SHA to the clip board
 # https://stackoverflow.com/a/25899810/4534704
