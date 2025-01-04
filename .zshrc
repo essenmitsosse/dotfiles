@@ -87,3 +87,7 @@ alias dotfile='GIT_DIR=$HOME/.dotfile.git/ GIT_WORK_TREE=$HOME'
 # https://stackoverflow.com/a/25899810/4534704
 alias gitCopyCurrentSha='git log -1 --format="%H" | pbcopy'
 alias gitBranchClean='(git rev-parse --abbrev-ref HEAD | pbcopy) && gsw main && gfa && ggl && git branch -d "$(pbpaste)"'
+
+# takes a commit ref and then get the current branch name and pushes it like `git push origin YOUR_REF:YOUR_BRANCH`
+#
+alias gitPush='f() { git push origin $1:$(git rev-parse --abbrev-ref HEAD) $2 };f'
