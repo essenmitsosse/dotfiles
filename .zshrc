@@ -191,7 +191,7 @@ function gitPush() {
 
   if [[ -n "$n" ]]; then
     # If -n was provided, we push from 0..n (i.e., n+1 pushes)
-    pushes="$n"
+    (( pushes = n - 1 ))
   else
     # If -s was provided, calculate totalCommits from startRef..commitRef
     local totalCommits
@@ -232,13 +232,16 @@ function gitPush() {
   BLUE='\033[0;34m'
   NC='\033[0m' # No Color / Reset
 
+
+  local realPushes=$(( pushes + 1 - o ))
+
   echo "\033[0;34mPushing multiple commits to origin...${NC}"
   if $forceFlag; then
     echo "\033[0;34m- force pushing the first commit${NC}"
   else
     echo "\033[0;34m- no force push${NC}"
   fi
-  echo "${BLUE}- pushing${NC} ${YELLOW}$pushes ${BLUE}commits${NC}"
+  echo "${BLUE}- pushing${NC} ${YELLOW}$realPushes ${BLUE}commits${NC}"
   echo "${BLUE}- waiting for${NC} ${YELLOW}$t ${BLUE}seconds between each${NC}"
   echo "${BLUE}- starting from commit reference:${NC} ${YELLOW}$commitRef${NC}"
   echo "${BLUE}- not pushing the last ${NC} ${YELLOW}$o${NC} commits${NC}"
