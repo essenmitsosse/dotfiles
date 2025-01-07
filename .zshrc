@@ -130,6 +130,7 @@ function gitPush() {
   local commitRef=''
   local t=''
   local n=''
+  local o=0
   local startRef=''
 
  # Parse arguments in any order
@@ -149,6 +150,10 @@ function gitPush() {
         ;;
       -t)
         t="$2"
+        shift 2
+        ;;
+      -o)
+        o="$2"
         shift 2
         ;;
       *)
@@ -205,7 +210,7 @@ function gitPush() {
   local cmd=''
 
   # Iterate n down to 0, building the tildes as we go
-  for (( i = pushes; i >= 0; i-- )); do
+  for (( i = pushes; i >= o; i-- )); do
     # Create a string of i tildes: ~~
     local tildes=''
     for (( j = 0; j < i; j++ )); do
@@ -236,6 +241,7 @@ function gitPush() {
   echo "${BLUE}- pushing${NC} ${YELLOW}$pushes ${BLUE}commits${NC}"
   echo "${BLUE}- waiting for${NC} ${YELLOW}$t ${BLUE}seconds between each${NC}"
   echo "${BLUE}- starting from commit reference:${NC} ${YELLOW}$commitRef${NC}"
+  echo "${BLUE}- not pushing the last ${NC} ${YELLOW}$o${NC} commits${NC}"
   echo "${BLUE}- executing:${NC}"
   echo "${YELLOW}$cmd${NC}"
 
